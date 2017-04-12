@@ -292,6 +292,11 @@ describe('Fragment', () => {
               </Fragment>
             </div>
           </Fragment>
+          <Fragment forRoute='/'>
+            <p>
+              Just slash
+            </p>
+          </Fragment>
         </div>
       </Fragment>
     );
@@ -302,6 +307,8 @@ describe('Fragment', () => {
         route: '/',
         assertion: wrapper => {
           expect(wrapper.containsMatchingElement(<h1>App Title</h1>))
+            .to.be.true;
+          expect(wrapper.containsMatchingElement(<p>Just slash</p>))
             .to.be.true;
         }
       },
